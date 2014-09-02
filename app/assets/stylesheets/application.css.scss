@@ -19,6 +19,8 @@
 // First import flatly variables
 @import "bootswatch/flatly/variables";
 
+$font-family-brand: 'Comfortaa', cursive;
+
 // Bootstrap itself
 @import "bootstrap";
 
@@ -28,7 +30,21 @@ body { padding-top: 60px; }
 // Bootswatch style itself
 @import "bootswatch/flatly/bootswatch";
 
+body{
+	background-image: image-url("background.png");
+}
+
+body > .container {
+	background: white;
+	@include box-shadow(gray 0px 0px 2px);
+}
+
 .navbar-fixed-top {
+	input {
+		border-radius: 25px;
+		min-width: 300px;
+	}
+
 	.profile-image {
 	    margin-top: -10px;
 	    margin-bottom: -10px;
@@ -48,5 +64,66 @@ body { padding-top: 60px; }
 	.fa-bell {
 		font-size: 20px;
 	}
-} 
 
+	.navbar-brand > .brand{
+		background: $brand-primary;
+		padding: 17px 12px 0px 12px;
+		margin-top: -34px;
+		
+		&.affix-top {
+			padding: 17px 12px 12px 12px;
+			margin-top: -20px;
+			@include box-shadow($brand-success 0px -5px 2px);
+		}
+
+		p {
+			font-family: $font-family-brand;
+
+			span{
+				margin: -4px;
+			}
+		}
+		
+		p:first-child{
+			font-size: 28px;
+		}
+
+		p:last-child{
+			font-size: 36px;
+			text-align: right;
+		}
+
+		@media screen and (vertical-scrollbar: on-top) {
+			margin-top: -40px;
+		}
+	}
+}
+
+.left-inner-addon {
+    position: relative;
+
+    input {
+	    padding-left: 30px;    
+	}
+
+	i {
+	    position: absolute;
+	    padding: 12px;
+	    pointer-events: none;
+	}
+}
+
+.right-inner-addon {
+    position: relative;
+
+    input {
+	    padding-right: 30px;    
+	}
+
+	i {
+	    position: absolute;
+	    right: 0px;
+	    padding: 12px;
+	    pointer-events: none;
+	}
+}
