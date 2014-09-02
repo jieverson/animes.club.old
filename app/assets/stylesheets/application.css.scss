@@ -27,3 +27,26 @@ body { padding-top: 60px; }
 
 // Bootswatch style itself
 @import "bootswatch/flatly/bootswatch";
+
+.navbar-fixed-top {
+	.profile-image {
+	    margin-top: -10px;
+	    margin-bottom: -10px;
+	}
+
+	.badge {
+		background-color: $brand-danger;
+		color: white;
+		font-size: 10px;
+		padding-left: 3px;
+		padding-right: 3px;
+		position: absolute;
+		margin-top: -7px;
+		margin-left: -7px;
+	}
+
+	.fa-bell {
+		font-size: 20px;
+	}
+} 
+
