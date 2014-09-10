@@ -4,8 +4,17 @@ Rails.application.routes.draw do
   resources :animes
 
   get 'home/index'
-
   get 'welcome/index'
+
+  get 'lists/watching'
+  get 'lists/completed'
+  get 'lists/todo'
+  get 'lists/dropped'
+
+  get "api" => proc { [404, {}, ['Invalid API endpoint']] }
+  get "api/*path" => proc { [404, {}, ['Invalid API endpoint']] }
+
+  get "/*path" => redirect("/?goto=%{path}")
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
