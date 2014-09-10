@@ -1,25 +1,25 @@
 Rails.application.routes.draw do
+  #Aux
   get 'profile/index'
 
-  resources :animes
-
-  get 'home/index'
-  get 'welcome/index'
-
+  #templates
   get 'lists/watching'
   get 'lists/completed'
   get 'lists/todo'
   get 'lists/dropped'
 
+  #Home
+  get 'home/index'
+
+  #API Routes
   get "api" => proc { [404, {}, ['Invalid API endpoint']] }
   get "api/*path" => proc { [404, {}, ['Invalid API endpoint']] }
 
+  #Angular Hack (must be the last but one... just before "root")
   get "/*path" => redirect("/?goto=%{path}")
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
   root 'home#index'
 
   # Example of regular route:

@@ -11,14 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140901022644) do
-
-  create_table "animes", force: true do |t|
-    t.text     "name"
-    t.text     "picture"
-    t.text     "synopsis"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end
