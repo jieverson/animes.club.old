@@ -19,18 +19,43 @@
 // First import flatly variables
 @import "bootswatch/flatly/variables";
 
+// Custom flatly variables
+$navbar-default-bg: rgba(250, 250, 250, 0.9);
+$navbar-default-link-color: $brand-primary;
+$navbar-default-link-hover-color: $brand-danger;
+$navbar-default-link-hover-bg: transparent;
+$navbar-default-link-active-color: $brand-primary;
+$navbar-default-link-active-bg: transparent;
+
+// Other variables
 $font-family-brand: 'Comfortaa', cursive;
 
 // Bootstrap itself
 @import "bootstrap";
 
-// Bootstrap body padding for fixed navbar
-body { padding-top: 60px; }
+// Bootstrap body padding for fixed navbar (if needed)
+// No need now!
 
 // Bootswatch style itself
 @import "bootswatch/flatly/bootswatch";
 
+//*** Begin Navbar-Top ***
 .navbar-fixed-top {
+	position: inherit;
+
+	&.affix {
+		position: fixed;
+		@include box-shadow(rgba(blue, 0.4) 0 0 25px);
+	}
+
+	border-bottom-color: rgb(200, 200, 200);
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+
+	height: 90px;
+	padding: 15px;
+	padding-right: 30px;
+	
 	input {
 		border-radius: 25px;
 		min-width: 300px;
@@ -41,31 +66,15 @@ body { padding-top: 60px; }
 	    margin-bottom: -10px;
 	}
 
-	.badge {
-		background-color: $brand-danger;
-		color: white;
-		font-size: 10px;
-		padding-left: 3px;
-		padding-right: 3px;
-		position: absolute;
-		margin-top: -7px;
-		margin-left: -7px;
+	//*** Begin Brand ***
+	.navbar-brand{
+		width: 225px;
 	}
 
-	.fa-bell {
-		font-size: 20px;
-	}
-
-	.navbar-brand > .brand{
-		background: $brand-primary;
+	.navbar-brand > .brand {
 		padding: 17px 12px 0px 12px;
 		margin-top: -34px;
-		
-		&.affix-top {
-			padding: 17px 12px 12px 12px;
-			margin-top: -20px;
-			@include box-shadow($brand-success 0px -5px 2px);
-		}
+		width: 120px;
 
 		p {
 			font-family: $font-family-brand;
@@ -83,13 +92,42 @@ body { padding-top: 60px; }
 			font-size: 36px;
 			text-align: right;
 		}
+	}
+	//*** End Brand ***
+}
+//*** End Navbar-Top ***
 
-		@media screen and (vertical-scrollbar: on-top) {
-			margin-top: -40px;
-		}
+.left-menu {
+	width: 225px;
+	position: absolute;
+	padding-left: 30px;
+	padding-top: 20px;
+
+	a:hover {
+		background-color: transparent;
+	}
+
+	&.affix{
+		position: fixed;
+		margin-top: -150px;
 	}
 }
 
+.banner{
+	width: 100%;
+	height: 250px;
+	background-image: image-url("banner.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+}
+
+main {
+	padding: 12px;
+	margin-left: 225px;
+}
+
+//*** Begin Hacks ***
 .left-inner-addon {
     position: relative;
 
@@ -118,3 +156,4 @@ body { padding-top: 60px; }
 	    pointer-events: none;
 	}
 }
+//*** End Hacks ***
