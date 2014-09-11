@@ -1,39 +1,14 @@
-<nav class="left-menu" data-spy="affix" data-offset-top="200">
+<nav class="left-menu" data-spy="affix" data-offset-top="200" ng-controller="MenuController">
 	<ul class="list-unstyled">
-		<li>
-			<h5><a href="#" class="text-primary">Home</a></h5>
-		</li>
-		<li>
-			<h5><a href="#" class="text-primary">Trending</a></h5>
-		</li>
-		<li>
-			<h5><a href="#" class="text-primary">Recomendations</a></h5>
-		</li>
-		<li>
-			<h5><a href="#" class="text-primary">New Releases</a> <span class="badge alert-danger">3</span></h5>
-		</li>
-		<li>
-			<h5><a href="#" class="text-primary">Current Season</a> <small class="text-muted">Airing</small></h5>
-		</li>
-		<li>
-			<h5><a href="#" class="text-primary">People</a></h5>
-		</li>
+		<li ng-repeat="item in items">
+			<span ng-hide="item.show" class="text-muted">{{item.group}}</span>
 
-		<li>
-			<span class="text-muted">MY LIST</span>
-		</li>
-		
-		<li>
-			<h5 class="text-danger">Currently Watching</h5>
-		</li>
-		<li>
-			<h5><a href="/completed" class="text-primary">Completed</a></h5>
-		</li>
-		<li>
-			<h5><a href="/todo" class="text-primary">Plan to Watch</a></h5>
-		</li>
-		<li>
-			<h5><a href="/dropped" class="text-primary">Dropped</a></h5>
+			<h5 ng-hide="item.group" ng-class="{ 'text-danger': item.selected() }">
+				<a href="{{item.url}}" class="text-primary" ng-hide="item.selected()">{{item.text}}</a>
+				<span ng-show="item.selected()">{{item.text}}</span>
+				<span ng-show="item.badge" class="badge alert-danger">{{item.badge}}</span>
+				<small ng-show="item.hint" class="text-muted">{{item.hint}}</small>
+			</h5>
 		</li>
 	</ul>
 </nav>
