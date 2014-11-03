@@ -14,88 +14,65 @@
  *= require_self
  */
 
-/******** Bootswatch: Flatly *********/
-
-// First import flatly variables
-@import "bootswatch/flatly/variables";
-
-// Custom flatly variables
-$navbar-default-bg: rgba(250, 250, 250, 0.9);
-$navbar-default-link-color: $brand-primary;
-$navbar-default-link-hover-color: $brand-danger;
-$navbar-default-link-hover-bg: transparent;
-$navbar-default-link-active-color: $brand-primary;
-$navbar-default-link-active-bg: transparent;
-
-// Other variables
-$font-family-brand: 'Comfortaa', cursive;
-
 // Bootstrap itself
 @import "bootstrap";
 
 // Bootstrap body padding for fixed navbar (if needed)
-// No need now!
+body {
+	padding-top: 100px;
+}
 
 // Bootswatch style itself
-@import "bootswatch/flatly/bootswatch";
+//@import "bootswatch/flatly/bootswatch";
+@import "bootstrap-material-design/ripples.min";
+@import "bootstrap-material-design/material-wfont";
+
+//*** Begin Custom Style ***
+.text-muted {
+	color: #b8c3c9;	
+}
+//*** End Custo Style
+
 
 //*** Begin Navbar-Top ***
 .navbar-fixed-top {
-	position: inherit;
+	@include box-shadow(rgba(blue, 0.4) 0 0 25px);
 
-	&.affix {
-		position: fixed;
-		@include box-shadow(rgba(blue, 0.4) 0 0 25px);
+	padding-left: 30px;
+	padding-right: 30px;
+
+	.navbar-brand {
+		padding-left: 0;
 	}
 
-	border-bottom-color: rgb(200, 200, 200);
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
+	form {
+		position: absolute;
 
-	height: 90px;
-	padding: 15px;
-	padding-right: 30px;
-	
-	input {
-		border-radius: 25px;
-		min-width: 300px;
+		left:250px;
+		right: 250px;
+
+		.input-group {
+			width: 100%;
+
+			.input-group-addon {
+				width: 30px;
+			}
+
+			.form-control-wrapper {
+				bottom: 0;
+
+				input {
+					width: 100%;
+				}
+			}
+		}
 	}
 
 	.profile-image {
 	    margin-top: -10px;
 	    margin-bottom: -10px;
 	}
-
-	//*** Begin Brand ***
-	.navbar-brand{
-		width: 225px;
-	}
-
-	.navbar-brand > .brand {
-		padding: 17px 12px 0px 12px;
-		margin-top: -34px;
-		width: 120px;
-
-		p {
-			font-family: $font-family-brand;
-
-			span{
-				margin: -4px;
-			}
-		}
-		
-		p:first-child{
-			font-size: 28px;
-		}
-
-		p:last-child{
-			font-size: 36px;
-			text-align: right;
-		}
-	}
-	//*** End Brand ***
 }
-//*** End Navbar-Top ***
 
 .left-menu {
 	width: 225px;
@@ -109,17 +86,7 @@ $font-family-brand: 'Comfortaa', cursive;
 
 	&.affix{
 		position: fixed;
-		margin-top: -150px;
 	}
-}
-
-.banner{
-	width: 100%;
-	height: 250px;
-	background-image: image-url("banner.jpg");
-	background-repeat: no-repeat;
-	background-size: 100%;
-	background-position: center;
 }
 
 main {
@@ -132,34 +99,7 @@ footer .container{
 }
 
 //*** Begin Hacks ***
-.left-inner-addon {
-    position: relative;
-
-    input {
-	    padding-left: 30px;    
-	}
-
-	i {
-	    position: absolute;
-	    padding: 12px;
-	    pointer-events: none;
-	}
-}
-
-.right-inner-addon {
-    position: relative;
-
-    input {
-	    padding-right: 30px;    
-	}
-
-	i {
-	    position: absolute;
-	    right: 0px;
-	    padding: 12px;
-	    pointer-events: none;
-	}
-}
+// Not now!
 //*** End Hacks ***
 
 //*** Begin Lists ***
