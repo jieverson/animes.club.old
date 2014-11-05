@@ -4,7 +4,7 @@
 			<span ng-hide="item.show" class="text-muted">{{item.group}}</span>
 
 			<h5 ng-hide="item.group" ng-class="{ 'text-danger': item.selected() }">
-				<a href="{{item.url}}" class="text-primary" ng-hide="item.selected()">{{item.text}}</a>
+				<a href="{{item.url}}" ng-hide="item.selected()"><span>{{item.text}}</span></a>
 				<span ng-show="item.selected()">{{item.text}}</span>
 				<span ng-show="item.badge" class="badge alert-danger">{{item.badge}}</span>
 				<small ng-show="item.hint" class="text-muted">{{item.hint}}</small>
