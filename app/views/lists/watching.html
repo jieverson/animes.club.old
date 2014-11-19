@@ -1,3 +1,5 @@
+<div class="anime-list">
+
 <h1 class="title">Currently Watching</h1>
 
 <div class="row-fluid" ng-controller="MyLists">
@@ -5,7 +7,7 @@
 		<div class="thumbnail">
 			<img src="{{item.picture}}" alt="{{item.name}}" class="pull-left">
 			<div class="caption">
-				<h4 style="">{{item.name}}</h4>
+				<h4 style=""><a href="/anime/{{item.id}}/{{item.name.split(' ').join('-')}}">{{item.name}}</a></h4>
 				<p>
 					OVA
 				</p>
@@ -15,4 +17,6 @@
 			</div>
 		</div>
 	</div>
+</div>
+
 </div>

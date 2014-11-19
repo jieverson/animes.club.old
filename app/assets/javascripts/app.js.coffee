@@ -17,6 +17,7 @@ window.App.config(['$routeProvider', ($routeProvider) ->
 	$routeProvider.when("/completed", { templateUrl: "/lists/completed" })
 	$routeProvider.when("/todo", { templateUrl: "/lists/todo" })
 	$routeProvider.when("/dropped", { templateUrl: "/lists/dropped" })
+	$routeProvider.when("/anime/:id/:name", { templateUrl: "/anime/profile", controller: "Anime" })
 ])
 
 $(document).on 'page:load', ->

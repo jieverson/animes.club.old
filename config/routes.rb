@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'lists/completed'
   get 'lists/todo'
   get 'lists/dropped'
+  get 'anime/profile'
 
   #Home
   get 'home/index'

@@ -28,6 +28,16 @@ body {
 @import "bootstrap-material-design/material-wfont";
 
 //*** Begin Custom Style ***
+a {
+    color: inherit;
+    
+    &:hover,
+    &:focus {
+		color: inherit;
+    	background-color: inherit;
+	}
+}
+
 .text-muted {
 	color: #b8c3c9;	
 }
@@ -80,8 +90,8 @@ body {
 	padding-left: 30px;
 	padding-top: 20px;
 
-	a:hover {
-		background-color: transparent;
+	.fa {
+		width: 20px;
 	}
 
 	&.affix{
@@ -103,21 +113,30 @@ footer .container{
 //*** End Hacks ***
 
 //*** Begin Lists ***
-.title{
-	padding-left: 15px;
-	padding-bottom: 15px;
-}
-
-.thumbnail {
-	height: 150px;
-
-	img {
-		height: 140px;
-		margin-right: 12px;
+.anime-list{
+	.title {
+		padding-left: 15px;
+		padding-bottom: 15px;
 	}
 
-	.caption{
+	.thumbnail {
+		height: 150px;
 
+		img {
+			height: 140px;
+			margin-right: 12px;
+		}
+
+		.caption{
+
+		}
 	}
 }
 //*** End Lists ****
+
+.anime-profile {
+	.thumbnail {
+		width: 200px;
+		margin-left: auto;
+	}
+}
