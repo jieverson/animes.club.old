@@ -18,6 +18,8 @@
 //= require bootstrap-sprockets
 //= require bootstrap-material-design/ripples.min
 //= require bootstrap-material-design/material.min
+//= require typeahead.bundle
+//= require handlebars
 
 $(document).ready(function() {
 	$.material.init();

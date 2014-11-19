@@ -41,6 +41,7 @@ a {
 .text-muted {
 	color: #b8c3c9;	
 }
+
 //*** End Custo Style
 
 
@@ -64,6 +65,10 @@ a {
 		.input-group {
 			width: 100%;
 
+			.twitter-typeahead {
+				width: 100%;
+			}
+
 			.input-group-addon {
 				width: 30px;
 			}
@@ -75,6 +80,13 @@ a {
 					width: 100%;
 				}
 			}
+		}
+
+		.tt-dropdown-menu {
+			width: 100%;
+			margin-top: 17px;
+			background: white;
+			@include box-shadow(rgba(blue, 0.4) 0 0 25px);
 		}
 	}
 

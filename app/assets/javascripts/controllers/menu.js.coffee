@@ -1,4 +1,4 @@
-App.controller 'MenuController', ['$scope', '$location', ($scope, $location) ->
+App.controller 'Menu', ['$scope', '$location', ($scope, $location) ->
 	$scope.items = [
 		{ text: 'Home', url: '/', icon: 'fa-home', selected: () -> $location.path() == this.url },
 		{ text: 'Trending', url: '/trending', icon: 'fa-comments', selected: () -> $location.path() == this.url },
